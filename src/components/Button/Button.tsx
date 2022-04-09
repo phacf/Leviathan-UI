@@ -1,12 +1,8 @@
 import React from 'react'
 import './Button.css'
+import { ButomProps } from '../types'
 
-type ButtonTypes = {
-  label: string,
-  title?: string
-}
-
-const Button: React.FC<ButtonTypes> = ({...props}) => {
+const Button: React.FC<ButomProps> = ({ ...props }) => {
   return <button>{props.label}</button>
 }
 

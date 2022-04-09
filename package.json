@@ -1,6 +1,6 @@
 {
   "name": "@phacf/template-component-lib",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Template for react component lib",
   "scripts": {
     "rollup": "rm -rf dist && rollup -c",
