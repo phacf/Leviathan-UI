@@ -3,6 +3,7 @@ import commonjs from '@rollup/plugin-commonjs'
 import typescript from '@rollup/plugin-typescript'
 import postcss from 'rollup-plugin-postcss'
 import dts from 'rollup-plugin-dts'
+import styledComponentsTransformer from 'typescript-plugin-styled-components'
 
 const packageJson = require('./package.json')
 
@@ -24,7 +25,12 @@ export default[
         plugins: [
             resolve(),
             commonjs(),
-            typescript({tsconfig: './tsconfig.json'}),
+            typescript({
+                tsconfig: './tsconfig.json',
+                transformers: [
+                    ()=>({before: [styledComponentsTransformer]})
+                ]
+            }),
             postcss()
         ],        
     },
