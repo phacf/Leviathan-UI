@@ -4,20 +4,17 @@ import { ButomProps } from './types'
 //STYLES
 import * as S from './styles'
 
-//PROVIDERS 
-
+//PROVIDERS
 
 const Button: React.FC<ButomProps> = props => {
-  const buttonTypes: { [k: string]: { [k: ButomProps]: string } } = {
-    accept: {backgroundColor : },
+  const buttonTypes: { [k: string]: { [k1: string]: string } } = {
+    accept: 1,
     cancel: 2,
     disabled: 3,
     close: 4
   }
 
-  
-
-  return <S.Button {...props || }>{props.label}</S.Button>
+  return <S.Button {...props}>{props.label}</S.Button>
 }
 
 export default Button
