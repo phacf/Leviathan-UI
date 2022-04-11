@@ -7,15 +7,16 @@ import Button from './Button';
 export default {
   title: 'Leviathan/Button',
   component: Button,
-  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes  
-  parameters: {
-    backgrounds: {
-      values:[
-        {name: 'red', value: '#f00'},
-        {name: 'dark', value: '#000'}
-      ]
+  // More on argTypes: https://storybook.js.org/docs/react/api/argtypes 
+  argTypes: {
+    label:{
+      description: 'Label goes inside body of the button',
+      control: {
+        type: null
+      }
     }
-  }
+  } 
+ 
 
 } as ComponentMeta<typeof Button>;
 
