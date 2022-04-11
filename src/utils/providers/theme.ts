@@ -9,6 +9,6 @@ export const color = {
     disabled: '#c8d3bc',
     fontBlack:'#333333',
     fontDisabled: '#898989',
-    fontWhite: '#e9e6f2'
+    fontWhite: '#f2effc'
 
 }

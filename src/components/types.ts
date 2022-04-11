@@ -1,4 +1,4 @@
-export interface PropsTypes {
+export interface StyleTypes {
     width?: string;
     height?: string;
     padding?: string;
