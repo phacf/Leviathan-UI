@@ -15,17 +15,17 @@ const Button: React.FC<ButomProps> = (props) => {
       success: {
         fontColor: color.success,
         borderColor: color.success,
-        backgroundColor: color.primary
+        backgroundColor: 'none'
       },
       warning: {
         fontColor: color.warning,
         borderColor: color.warning,
-        backgroundColor: color.primary
+        backgroundColor: 'none'
       },
       error: {
         fontColor: color.error,
         borderColor: color.error,
-        backgroundColor: color.primary
+        backgroundColor: 'none'
       },
       disabled: {
         fontColor: color.fontDisabled,
@@ -34,7 +34,7 @@ const Button: React.FC<ButomProps> = (props) => {
       },
       default: {
         fontColor: color.fontBlack,
-        backgroundColor: color.success
+        backgroundColor: color.primary
       }
     };
     
