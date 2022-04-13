@@ -1,11 +1,9 @@
 import React, { ReactChild } from 'react';
-import { StyleTypes } from '../types'
 
-export type ButomProps = StyleTypes & {
+export type ButomProps = {
     label?: string;
     onClick?: React.MouseEventHandler<HTMLButtonElement>
-    mode?: string;
-    disabled?: string;
+    disabled?: boolean;
     children?: ReactChild
 
 }

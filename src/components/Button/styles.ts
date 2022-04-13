@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
 
-import { ButomProps } from './types'
+import { StyleTypes } from '../types'
 import {color} from '../../utils/providers/theme'
 
-export const Button = styled.button<ButomProps>`
+export const Button = styled.button<StyleTypes>`
   ${({
     backgroudColor,
     padding,

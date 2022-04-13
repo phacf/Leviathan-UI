@@ -1,4 +1,4 @@
-export const color = {
+ export const color = {
     primary:'#333F63',
     secondary:'#715C8C',
     terciary: '#D7D4DD',
@@ -12,3 +12,5 @@ export const color = {
     fontWhite: '#f2effc'
 
 }
+
+
