@@ -5,13 +5,14 @@ import { ButomProps } from './types'
 import * as S from './styles'
 
 //PROVIDERS
-import {} from '../../utils/providers/theme'
+import { Default } from '../../utils/providers/theme'
 
 const Button: React.FC<ButomProps> = (props) => {
-  
-  
-  
-  return <S.Button >{props.children}</S.Button>
+
+//@TODO calculate posotion 
+
+
+  return <S.Button onClick={(e)=> console.log(e.nativeEvent.offsetX, e.nativeEvent.offsetY)}>{props.children}</S.Button>
 }
 
 export default Button

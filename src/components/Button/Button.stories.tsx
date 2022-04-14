@@ -8,16 +8,6 @@ export default {
   title: 'Leviathan/Button',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes 
-  argTypes: {
-
-    onClick: {
-      description: 'Trigger event onClick',
-      control: {
-        type: 'none'
-      }
-    }
-    
-  } 
  
 
 } as ComponentMeta<typeof Button>;

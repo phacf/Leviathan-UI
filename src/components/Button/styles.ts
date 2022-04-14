@@ -1,28 +1,30 @@
 import styled, { css } from 'styled-components'
 
 import { StyleTypes } from '../types'
-import {color} from '../../utils/providers/theme'
+import { Default } from '../../utils/providers/theme'
 
 export const Button = styled.button<StyleTypes>`
   ${({
-    backgroudColor,
-    padding,
-    borderColor,
-    borderRadius,
-    fontSize,
-    fontColor,
-  }) => css`
-    border: ${borderColor ? `2px solid ${borderColor}` : 'none'};
-    background-color: ${backgroudColor || color.primary};
-    padding: ${padding || '10px 15px'};
-    border-radius: ${borderRadius || '5px'};
-    font-size: ${fontSize};
-    color: ${fontColor || color.fontWhite};
-    font-weight: bold;
-    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, 0.4);
+  backgroudColor,
+  padding,
+  borderColor,
+  borderRadius,
+  fontSize,
+  fontColor,
+}) => css`
+    border: ${Default.border.width.default} ;
+    border-color: black;
+    border-style: ${Default.border.style.default};
+    background-color: ${Default.color.primary};
+    padding: ${padding};
+    border-radius: ${Default.border.radius.hard};
+    font-size: ${Default.font.size.default};
+    color: ${Default.font.color.light};
+    font-weight:normal ;
+    box-shadow:   ${Default.shadow.distance.default}${Default.shadow.color.hard};
     
     :active {
-      box-shadow: 0px 3px 3px -2px rgba(0, 0, 0, 0.4);
+      box-shadow:  ${Default.shadow.distance.pressed}${Default.shadow.color.hard};
     }
   `}
 `
