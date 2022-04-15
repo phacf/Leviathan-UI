@@ -1,30 +1,40 @@
 import styled, { css } from 'styled-components'
 
+//TYPES
 import { StyleTypes } from '../types'
-import { Default } from '../../utils/providers/theme'
+
+//PROVIDERS
+import { Theme } from '../../utils/providers/theme'
+const {Default} = Theme
 
 export const Button = styled.button<StyleTypes>`
   ${({
-  backgroudColor,
-  padding,
-  borderColor,
-  borderRadius,
-  fontSize,
-  fontColor,
-}) => css`
-    border: ${Default.border.width.default} ;
-    border-color: black;
-    border-style: ${Default.border.style.default};
-    background-color: ${Default.color.primary};
+    backgroudColor,
+    padding,
+    borderColor,
+    borderRadius,
+    borderWidth,
+    borderStyle,
+    fontSize,
+    fontColor,
+    fontWeight
+  }) => css`
+    border: ${borderWidth};
+    border-color: ${borderColor};
+    border-style: ${borderStyle};
+    background-color: ${backgroudColor};
     padding: ${padding};
-    border-radius: ${Default.border.radius.hard};
-    font-size: ${Default.font.size.default};
-    color: ${Default.font.color.light};
-    font-weight:normal ;
-    box-shadow:   ${Default.shadow.distance.default}${Default.shadow.color.hard};
-    
-    :active {
-      box-shadow:  ${Default.shadow.distance.pressed}${Default.shadow.color.hard};
-    }
+    border-radius: ${borderRadius};
+    font-size: ${fontSize};
+    color: ${fontColor};
+    font-weight: ${fontWeight};
   `}
 `
+
+//PRESET STYLES
+  
+
+export const OutilinedDefault:StyleTypes = {
+  borderColor: Default.color.primary,
+  fontColor: Default.color.primary
+}

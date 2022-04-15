@@ -8,10 +8,13 @@ export interface StyleTypes {
     backgroudColor?: string;
 
     borderColor?: string;
+	borderStyle?: string;
     borderRadius?: string;
+	borderWidth?: string;
     
     fontSize?: string;
     fontColor?: string;
+	fontWeight?: string;
 
     
     position?: string;
@@ -20,7 +23,6 @@ export interface StyleTypes {
 	left?: string;
 	right?: string;
     
-	fontWeight?: string;
     
 	cursor?: string;
     
