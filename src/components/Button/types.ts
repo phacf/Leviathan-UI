@@ -6,10 +6,8 @@ export type ButomProps = {
     */
     children?: React.ReactChildren;
     disabled?: boolean;
-    outlined?: boolean;
-    small?: boolean;
-    medium?: boolean;
-    large?: boolean;
-    Xl?:boolean;
+    outline?: boolean;
+    type?: 'error' | 'warning' | 'success' | 'default'
+    size?: 'small' | 'medium' | 'larfe' | 'xl';
 
 }

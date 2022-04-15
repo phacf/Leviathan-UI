@@ -28,7 +28,8 @@ export const Theme = {
       },
       color: {
         default: '#333333',
-        light: '#f2effc'
+        light: '#f2effc',
+        disabled: '#6d6b6b'
       }
     },
 

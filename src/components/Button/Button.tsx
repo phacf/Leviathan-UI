@@ -4,19 +4,20 @@ import { ButomProps } from './types'
 //STYLES
 import * as S from './styles'
 
+export const Button: React.FC<ButomProps> = props => {
 
-export const Button: React.FC<ButomProps> = (props) => {
-  
-  return <S.Button>{props.children}</S.Button>
-}
+  function getStyle () {
+    if (props.outline) {
+      if (props.disabled) return S.OutlineStyle.disabled
 
-export const Outlined: React.FC<ButomProps> = (props) => {
-  return <S.Button {...S.OutilinedDefault}{...props} >{props.children}</S.Button>
-}
+      return props.type ? S.OutlineStyle[props.type] : S.OutlineStyle.default
+    }
 
-export default Button;
+    if (props.disabled) return S.DefaultStyle.disabled
+    return props.type && S.DefaultStyle[props.type]
+  }
 
-export const StorybookSelect = {
-  ['Outlined']: (props: ButomProps)=> <Outlined {...props}/>,
-  ['Default']: (props: ButomProps)=> <Button {...props}/>
-}
+  return <S.Button {...getStyle()}>{props.children}</S.Button>
+};
+
+export default Button

@@ -5,7 +5,7 @@ import { Button } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Leviathan/Button',
+  title: 'Leviathan/Button/Filled',
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -15,9 +15,13 @@ export default {
       control: { type: 'text' }
     },
     disabled:{control: 'none'},
-    outline: {control: 'none'},
+    outline: { control: 'none'},
+    
     size: {control: 'none'},
-    type: {control: 'none'}
+    type: {
+        control: 'radio',
+        options: ['warning', 'error', 'success', 'default']         
+    }
   }
 } as ComponentMeta<typeof Button>
 
@@ -25,7 +29,11 @@ export default {
 const Template: ComponentStory<typeof Button> = args => <Button {...args}>{args.children}</Button>
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = Template.bind({})
+export const Example = Template.bind({})
+Example.args = {
+    outline: false
+}
+
 
 
 
