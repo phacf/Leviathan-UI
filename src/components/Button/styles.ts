@@ -48,6 +48,8 @@ export const Button = styled.button<StyleTypes>`
 
 //PRESET STYLES
 
+export const ButtonSizes: {[k:string]: StyleTypes} = Default.font.size;
+
 export const OutlineStyle: {[k: string]: StyleTypes} = {
   default: {
     borderColor: Default.color.primary,

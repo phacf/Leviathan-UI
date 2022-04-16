@@ -14,7 +14,7 @@ export default {
       defaultValue: 'Click me',
       control: { type: 'text' }
     },
-    disabled:{control: 'none'},
+    disabled:{control: 'radio'},
     outline: {control: 'none'},
     size: {control: 'none'},
     type: {control: 'none'}

@@ -4,9 +4,13 @@ import { ButomProps } from './types'
 //STYLES
 import * as S from './styles'
 
+
 export const Button: React.FC<ButomProps> = props => {
 
+  const style = getStyle()
+
   function getStyle () {
+    const style = {}
     if (props.outline) {
       if (props.disabled) return S.OutlineStyle.disabled
 
@@ -17,7 +21,7 @@ export const Button: React.FC<ButomProps> = props => {
     return props.type && S.DefaultStyle[props.type]
   }
 
-  return <S.Button {...getStyle()}>{props.children}</S.Button>
+  return <S.Button {...style} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
 };
 
 export default Button

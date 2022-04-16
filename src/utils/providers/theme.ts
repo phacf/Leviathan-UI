@@ -17,10 +17,12 @@ export const Theme = {
         "--apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
       size: {
         default: '1rem',
-        thin: 'thin',
+        small: 'small',
         medium: 'medium',
-        large: 'thick',
-        extraLarge: '2.5rem'
+        large: 'large',
+        xl: 'x-large',
+        xxl: '2rem'
+
       },
       weight: {
         default: 'normal',

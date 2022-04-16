@@ -8,6 +8,6 @@ export type ButomProps = {
     disabled?: boolean;
     outline?: boolean;
     type?: 'error' | 'warning' | 'success' | 'default'
-    size?: 'small' | 'medium' | 'larfe' | 'xl';
+    size?: 'default' | 'small' | 'medium' | 'large' | 'xl' | 'xxl';
 
 }

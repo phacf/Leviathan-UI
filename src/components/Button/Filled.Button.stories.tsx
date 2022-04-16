@@ -17,7 +17,10 @@ export default {
     disabled:{control: 'none'},
     outline: { control: 'none'},
     
-    size: {control: 'none'},
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
     type: {
         control: 'radio',
         options: ['warning', 'error', 'success', 'default']         
