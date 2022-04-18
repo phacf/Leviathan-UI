@@ -14,9 +14,12 @@ export default {
       defaultValue: 'Click me',
       control: { type: 'text' }
     },
-    disabled:{control: 'radio'},
+    disabled:{control: 'boolean'},
     outline: {control: 'none'},
-    size: {control: 'none'},
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
     type: {control: 'none'}
   }
 } as ComponentMeta<typeof Button>

@@ -21,7 +21,9 @@ export const Button: React.FC<ButomProps> = props => {
     return props.type && S.DefaultStyle[props.type]
   }
 
-  return <S.Button {...style} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
+
+
+  return <S.Button  {...style} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
 };
 
 export default Button

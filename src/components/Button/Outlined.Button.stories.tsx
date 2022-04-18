@@ -14,10 +14,13 @@ export default {
       defaultValue: 'Click me',
       control: { type: 'text' }
     },
-    disabled:{control: 'none'},
+    disabled:{control: 'boolean'},
     outline: { control: 'boolean'},
     
-    size: {control: 'none'},
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
     type: {
         control: 'radio',
         options: ['warning', 'error', 'success', 'default']         

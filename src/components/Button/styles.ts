@@ -29,6 +29,7 @@ export const Button = styled.button<StyleTypes>`
     font-size: ${fontSize || Default.font.size.default};
     color: ${fontColor || Default.font.color.light};
     font-weight: ${fontWeight || Default.font.weight.default};
+    
     cursor: ${cursor || 'pointer'};
 
     :disabled {
@@ -41,7 +42,7 @@ export const Button = styled.button<StyleTypes>`
       font-size: ${fontSize || Default.font.size.default};
       color: ${fontColor || Default.font.color.disabled};
       font-weight: ${fontWeight || Default.font.weight.default};
-      cursor: not-allowed;
+      cursor:not-allowed;
     }
   `}
 `
@@ -84,7 +85,8 @@ export const OutlineStyle: {[k: string]: StyleTypes} = {
     borderStyle: Default.border.style.default,
     borderWidth: Default.border.width.default,
     fontColor: Default.color.disabled,
-    backgroudColor: 'none'
+    backgroudColor: 'none',
+    cursor: 'not-allowed'
   }
 };
 
@@ -100,6 +102,7 @@ export const DefaultStyle: {[k: string]: StyleTypes} = {
   },
   disabled: {
     fontColor: Default.font.color.disabled,
-    backgroudColor: Default.color.disabled
+    backgroudColor: Default.color.disabled,
+    cursor: 'not-allowed'
   }
 };
