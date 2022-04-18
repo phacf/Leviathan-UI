@@ -49,7 +49,7 @@ export const Button = styled.button<StyleTypes>`
 
 //PRESET STYLES
 
-export const ButtonSizes: {[k:string]: StyleTypes} = Default.font.size;
+export const ButtonSizes: {[k:string]: string} = Default.font.size;
 
 export const OutlineStyle: {[k: string]: StyleTypes} = {
   default: {
