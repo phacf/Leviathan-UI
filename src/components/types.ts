@@ -1,4 +1,5 @@
 export interface StyleTypes {
+	effectonHover?: boolean;
     width?: string;
     height?: string;
     padding?: string;

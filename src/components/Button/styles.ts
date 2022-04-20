@@ -18,7 +18,8 @@ export const Button = styled.button<StyleTypes>`
     fontSize,
     fontColor,
     fontWeight,
-    cursor
+    cursor,
+    effectonHover
   }) => css`
     border: ${borderWidth || 'none'};
     border-color: ${borderColor || 'none'};
@@ -29,8 +30,14 @@ export const Button = styled.button<StyleTypes>`
     font-size: ${fontSize || Default.font.size.default};
     color: ${fontColor || Default.font.color.light};
     font-weight: ${fontWeight || Default.font.weight.default};
+    transition: 0.17s ease-in-out;
     
     cursor: ${cursor || 'pointer'};
+
+    :hover{
+    background-color: ${effectonHover ? borderColor || backgroudColor : backgroudColor || Default.color.primary};
+    color: ${effectonHover ? Default.font.color.light : fontWeight || Default.font.weight.default};
+    }
 
     :disabled {
       border: ${borderWidth || 'none'};

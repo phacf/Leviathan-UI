@@ -12,6 +12,7 @@ export const Button: React.FC<ButomProps> = props => {
   function getStyle () {
     const style = {}
     if (props.outline) {
+      
       if (props.disabled) return S.OutlineStyle.disabled
 
       return props.type ? S.OutlineStyle[props.type] : S.OutlineStyle.default
@@ -23,7 +24,7 @@ export const Button: React.FC<ButomProps> = props => {
 
 
 
-  return <S.Button  {...style} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
+  return <S.Button  {...style} effectonHover={props.effectOnHover} onClick={()=> !props.disabled && props.onClick} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
 };
 
 export default Button
