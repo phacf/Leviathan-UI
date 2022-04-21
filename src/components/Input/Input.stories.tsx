@@ -15,6 +15,9 @@ export default {
     correct: {
       control: 'radio',
       options: [undefined, true, false]
+    },
+    hint:{
+      defaultValue: 'Error!'
     }
   }
 } as ComponentMeta<typeof Input>

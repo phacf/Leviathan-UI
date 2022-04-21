@@ -8,6 +8,7 @@ export type InputProps {
     key?: string;
     label?: string;
     correct?: boolean;
+    hint?: string;
 }
 
 export type Container = StyleTypes & {
@@ -18,3 +19,4 @@ export type Label = StyleTypes & {
     inputFocus: boolean;
     color?: string;
 }
+

@@ -42,3 +42,14 @@ ${({correct}) => css`
   transition: 0.15s ease-in-out;
 `}
 `;
+
+export const InputHint = styled.div <StyleTypes> `
+${()=>css`
+  color: ${Theme.Default.color.error};
+  font-size: ${Theme.Default.font.size.small};
+  right: 0.4rem;
+  bottom: 1.8rem;
+  position : absolute;
+  font-weight: ${Theme.Default.font.weight.bolt};
+`}
+`;
