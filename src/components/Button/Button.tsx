@@ -4,9 +4,7 @@ import { ButomProps } from './types'
 //STYLES
 import * as S from './styles'
 
-
 export const Button: React.FC<ButomProps> = props => {
-
   const style = getStyle()
 
   function getStyle () {
@@ -22,9 +20,15 @@ export const Button: React.FC<ButomProps> = props => {
     return props.type && S.DefaultStyle[props.type]
   }
 
-
-
-  return <S.Button  {...style} effectonHover={props.effectOnHover} onClick={()=> !props.disabled && props.onClick} fontSize={S.ButtonSizes[props.size || 'default']}>{props.children}</S.Button>
-};
+  return (
+    <S.Button
+      {...style}
+      width={props.fillSpace ? props.fillSpace.toString() : ''}
+      fontSize={S.ButtonSizes[props.size || 'default']}
+    >
+      {props.children}
+    </S.Button>
+  )
+}
 
 export default Button

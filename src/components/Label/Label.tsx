@@ -3,8 +3,11 @@ import React from "react";
 //STYLES
 import * as S from './styles'
 
-const Label = (props) => {
-return <S.Label/>
+//TYPES
+import {LabelProps} from './types'
+
+const Label: React.FC<LabelProps> = (props) => {
+return <S.Label htmlFor={props.htmlFor}>{props.children}</S.Label>
 }
 
 export default Label

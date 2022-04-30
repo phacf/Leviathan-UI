@@ -19,8 +19,10 @@ export const Button = styled.button<StyleTypes>`
     fontColor,
     fontWeight,
     cursor,
-    effectonHover
+    effectonHover,
+    width
   }) => css`
+    width: ${width && '100%'};
     border: ${borderWidth || 'none'};
     border-color: ${borderColor || 'none'};
     border-style: ${borderStyle || 'none'};
