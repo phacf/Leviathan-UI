@@ -26,7 +26,7 @@ export const Theme = {
       },
       weight: {
         default: 'normal',
-        bolt: 'bolt'
+        bolt: '700'
       },
       color: {
         default: '#333333',

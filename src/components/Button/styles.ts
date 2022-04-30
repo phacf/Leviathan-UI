@@ -33,12 +33,16 @@ export const Button = styled.button<StyleTypes>`
     color: ${fontColor || Default.font.color.light};
     font-weight: ${fontWeight || Default.font.weight.default};
     transition: 0.17s ease-in-out;
-    
+
     cursor: ${cursor || 'pointer'};
 
-    :hover{
-    background-color: ${effectonHover ? borderColor || backgroudColor : backgroudColor || Default.color.primary};
-    color: ${effectonHover ? Default.font.color.light : fontWeight || Default.font.weight.default};
+    :hover {
+      background-color: ${effectonHover
+        ? borderColor || backgroudColor
+        : backgroudColor || Default.color.primary};
+      color: ${effectonHover
+        ? Default.font.color.light
+        : fontWeight || Default.font.weight.default};
     }
 
     :disabled {
@@ -51,16 +55,16 @@ export const Button = styled.button<StyleTypes>`
       font-size: ${fontSize || Default.font.size.default};
       color: ${fontColor || Default.font.color.disabled};
       font-weight: ${fontWeight || Default.font.weight.default};
-      cursor:not-allowed;
+      cursor: not-allowed;
     }
   `}
 `
 
 //PRESET STYLES
 
-export const ButtonSizes: {[k:string]: string} = Default.font.size;
+export const ButtonSizes: { [k: string]: string } = Default.font.size
 
-export const OutlineStyle: {[k: string]: StyleTypes} = {
+export const OutlineStyle: { [k: string]: StyleTypes } = {
   default: {
     borderColor: Default.color.primary,
     borderStyle: Default.border.style.default,
@@ -97,9 +101,9 @@ export const OutlineStyle: {[k: string]: StyleTypes} = {
     backgroudColor: 'none',
     cursor: 'not-allowed'
   }
-};
+}
 
-export const DefaultStyle: {[k: string]: StyleTypes} = {
+export const DefaultStyle: { [k: string]: StyleTypes } = {
   error: {
     backgroudColor: Default.color.error
   },
@@ -114,4 +118,4 @@ export const DefaultStyle: {[k: string]: StyleTypes} = {
     backgroudColor: Default.color.disabled,
     cursor: 'not-allowed'
   }
-};
+}

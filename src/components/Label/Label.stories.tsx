@@ -7,8 +7,24 @@ import Label from './Label'
 export default {
   title: 'Leviathan/Label',
   component: Label,
+  
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-  argTypes: {}
+  
+  argTypes: {
+
+    children: {
+      defaultValue: 'label',
+      control: {type: 'text'}
+    },
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
+    type: {
+      control: 'radio',
+      options: ['warning', 'error', 'success', 'default']         
+  }
+  }
 } as ComponentMeta<typeof Label>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
