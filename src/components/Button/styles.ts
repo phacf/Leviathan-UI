@@ -40,9 +40,10 @@ export const Button = styled.button<StyleTypes>`
       background-color: ${effectonHover
         ? borderColor || backgroudColor
         : backgroudColor || Default.color.primary};
-      color: ${effectonHover
-        ? Default.font.color.light
-        : fontWeight || Default.font.weight.default};
+      color: ${effectonHover ? 
+        Default.font.color.light : 
+        fontWeight || 
+        Default.font.weight.default};
     }
 
     :disabled {

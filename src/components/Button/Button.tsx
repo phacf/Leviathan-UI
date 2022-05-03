@@ -23,6 +23,7 @@ export const Button: React.FC<ButomProps> = props => {
   return (
     <S.Button
       {...style}
+      effectonHover= {props.effectOnHover}
       width={props.fillSpace ? props.fillSpace.toString() : ''}
       fontSize={S.ButtonSizes[props.size || 'default']}
     >
