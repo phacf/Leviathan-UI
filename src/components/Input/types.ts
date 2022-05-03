@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleTypes } from '../types'
 
-export type InputProps {
+export type InputProps = {
     onChange?: (e: React.BaseSyntheticEvent) => any;
     id: string;
     key?: string;
