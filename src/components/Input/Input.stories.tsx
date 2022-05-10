@@ -18,7 +18,11 @@ export default {
     },
     hint:{
       defaultValue: 'Error!'
-    }
+    },
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
   }
 } as ComponentMeta<typeof Input>
 

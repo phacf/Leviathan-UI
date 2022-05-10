@@ -27,6 +27,8 @@ const InputComponent: React.FC<InputProps> = (props) => {
         <>
             <S.InputContainer
                 correct={Theme.Default.color[getIscorrect()]}
+                width={props.fillSpace ? props.fillSpace.toString() : ''}
+
             >
                 <S.InputLabel
                     inputFocus={focus || !!inputValue}
@@ -35,12 +37,13 @@ const InputComponent: React.FC<InputProps> = (props) => {
                 </S.InputLabel>
 
                 <S.Input
+                    fontSize={S.InputSizes[props.size || 'default']}
                     onFocus={() => setFocus(true)}
                     onBlur={() => setFocus(false)}
                     onChange={handleChange}
                     id={props.id}
                 />
-            {props.correct === false && props.hint && <S.InputHint>{props.hint}</S.InputHint>}
+                {props.correct === false && props.hint && <S.InputHint>{props.hint}</S.InputHint>}
 
             </S.InputContainer>
 

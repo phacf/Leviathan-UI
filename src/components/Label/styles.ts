@@ -11,6 +11,7 @@ export const Label = styled.label<StyleTypes>`
   ${({ fontSize, fontWeight, fontColor }) => css`
     color: ${fontColor || Theme.Default.font.color.default};
     font-size: ${fontSize || Theme.Default.font.size.default};
+    font-family: ${Theme.Default.font.family};
     font-weight: ${fontWeight};
   `}
 `
