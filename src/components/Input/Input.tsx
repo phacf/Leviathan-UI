@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 
-//STYLES
+    
 import * as S from './styles'
 import { Theme } from '../../utils/providers/theme'
 

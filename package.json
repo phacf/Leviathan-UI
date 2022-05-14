@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Leviathan UI react component lib",
   "scripts": {
+    "postpublish": "npm run build",
     "build": "rm -rf dist && rollup -c",
     "test": "jest",
     "storybook": "start-storybook -p 6006",
