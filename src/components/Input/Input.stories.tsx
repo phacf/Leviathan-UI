@@ -5,12 +5,12 @@ import Input from './Input'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: 'Leviathan/Input',
+  title: 'Leviathan/Input-Text',
   component: Input,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     label: {
-      defaultValue: 'Input label',
+      defaultValue: 'INPUT LABEL',
     },
     correct: {
       control: 'radio',
@@ -18,7 +18,11 @@ export default {
     },
     hint:{
       defaultValue: 'Error!'
-    }
+    },
+    size: {
+      control: 'radio',
+      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+    },
   }
 } as ComponentMeta<typeof Input>
 

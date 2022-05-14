@@ -26,6 +26,8 @@ export const Button = styled.button<StyleTypes>`
     border: ${borderWidth || 'none'};
     border-color: ${borderColor || 'none'};
     border-style: ${borderStyle || 'none'};
+    font-family: ${Theme.Default.font.family};
+
     background-color: ${backgroudColor || Default.color.primary};
     padding: ${padding || '0.3rem 1rem'};
     border-radius: ${borderRadius || Default.border.radius.soft};
