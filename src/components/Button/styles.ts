@@ -5,7 +5,7 @@ import { StyleTypes } from '../types'
 
 //PROVIDERS
 import { Theme } from '../../utils/providers/theme'
-const { Default } = Theme
+const { Postman: Default } = Theme
 
 export const Button = styled.button<StyleTypes>`
   ${({

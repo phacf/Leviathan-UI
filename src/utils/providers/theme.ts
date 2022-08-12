@@ -66,5 +66,73 @@ export const Theme = {
         pressed: '0px 3px 3px -2px'
       }
     }
+  },
+  Postman: {
+    color: {
+      primary: '#067AED',
+      secondary: '#F2F2F2',
+      terciary: '#E6E6E6',
+      forth: '#FFFFFF',
+      success: '#EE703D',
+      warning: '#FEC901',
+      error: '#ff3d3d',
+      disabled: '#c8d3bc',
+      fontDisabled: '#898989'
+    },
+
+    font: {
+      family:
+        "--apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif",
+      size: {
+        default: '1rem',
+        small: 'small',
+        medium: 'medium',
+        large: 'large',
+        xl: 'x-large',
+        xxl: '2rem'
+
+      },
+      weight: {
+        default: 'normal',
+        bolt: '700'
+      },
+      color: {
+        default: '#373737',
+        light: '#F2F2F2',
+        disabled: '#6E6E6E'
+      }
+    },
+
+    border: {
+      width: {
+        default: 'medium',
+        thin: 'thin',
+        large: 'thick'
+      },
+      style: {
+        default: 'solid',
+        dotted: 'dotted',
+        dashed: 'dashed'
+      },
+      radius: {
+        square: 'none',
+        soft: '0.3rem',
+        medium: '0.6rem',
+        hard: '1.5rem',
+        circle: '50%'
+      }
+    },
+
+    shadow: {
+      color: {
+        default: '#bfbfbf',
+        medium: '#828282',
+        hard: '#666666'
+      },
+      distance: {
+        default: '0px 5px 5px -2px',
+        pressed: '0px 3px 3px -2px'
+      }
+    }
   }
 }
