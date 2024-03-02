@@ -556,6 +556,10 @@ video {
   border-width: 0;
 }
 
+.contents {
+  display: contents;
+}
+
 .cursor-pointer {
   cursor: pointer;
 }

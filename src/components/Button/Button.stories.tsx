@@ -1,5 +1,5 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './Button'
 
@@ -20,10 +20,14 @@ export default {
       control: { type: 'text' }
     }
   }
-} as ComponentMeta<typeof Button>
+} satisfies Meta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = args => <Button {...args}/>
+type Story = StoryObj<typeof Button>;
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = Template.bind({})
+export const Default: Story = {
+  args:{
+    label: 'click-me',
+  }
+}

@@ -3,8 +3,6 @@ module.exports = {
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    './zenity-frontend/@zenity-ui/**/*.{js,ts,jsx,tsx}',
-    './zenity-frontend/main/presentation/**/*.{js,ts,jsx,tsx}'
   ],
   darkMode: ['class', '[data-mode="dark"]'],
   theme: {
