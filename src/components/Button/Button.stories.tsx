@@ -22,6 +22,7 @@ export default {
     },
     size: {
       control: 'radio',
+      description: 'Label that goes inside the element',
       options: ['large', 'medium', 'small'],
       defaultValue: 'medium'
     },

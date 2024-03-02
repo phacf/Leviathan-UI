@@ -1,5 +1,6 @@
-import React from 'react';
-import 'tailwindcss/tailwind.css'; // Importa as classes do Tailwind CSS
+import React from 'react'
+import { Tooltip } from 'react-tooltip'
+import 'tailwindcss/tailwind.css'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -9,12 +10,12 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   audioDescription?: string
   color: 'primary' | 'secondary' | 'primary_outline' | 'secondary_outline'
   size: 'large' | 'medium' | 'small'
-
+  tooltip?: string
 }
 
 export const Button = (props: ButtonProps) => {
 
-  const { size, color, label, audioDescription } = props
+  const { size, color, label, audioDescription, tooltip } = props
 
   const sizes = {
     small: 'text-sm font-medium px-3 py-2',
@@ -31,17 +32,17 @@ export const Button = (props: ButtonProps) => {
   }
 
 
-
-
-
   return (
     <button
       className={`${styles[color]} ${sizes[size]} `}
       aria-label={label}
+      data-tooltip-id="my-tooltip"
+      data-tooltip-content={tooltip}
       {...props}
     >
       {label}
       {/* Inclui uma descrição de áudio para usuários de leitores de tela */}
+      <Tooltip className='rounded-md bg-primary-300 text-secondary-700 p-1 text-xs' role='tooltip' variant='info' classNameArrow='' id="my-tooltip" />
       <span className="sr-only" aria-live="polite" aria-hidden="true">
         {audioDescription}
       </span>
