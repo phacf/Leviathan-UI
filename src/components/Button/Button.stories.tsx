@@ -6,6 +6,7 @@ import { Button } from './Button'
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Leviathan/Button',
+  tags: ['autodocs'],
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
@@ -18,7 +19,12 @@ export default {
       description: 'Inclui uma descrição de áudio para usuários de leitores de tela',
       defaultValue: 'Click me',
       control: { type: 'text' }
-    }
+    },
+    size: {
+      control: 'radio',
+      options: ['large', 'medium', 'small'],
+      defaultValue: 'medium'
+    },
   }
 } satisfies Meta<typeof Button>
 
@@ -29,5 +35,8 @@ type Story = StoryObj<typeof Button>;
 export const Default: Story = {
   args:{
     label: 'click-me',
+    size: 'medium',
+    color: 'primary',
+    audioDescription: 'Incluir descrição de audio',
   }
 }

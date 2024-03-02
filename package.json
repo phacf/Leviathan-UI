@@ -2,7 +2,6 @@
   "name": "@phacf/leviathan-ui",
   "version": "0.0.5",
   "description": "Leviathan UI react component lib",
-  "type": "module",
   "scripts": {
     "postpublish": "npm run build",
     "build": "rm -rf dist && rollup -c",

@@ -20,7 +20,6 @@ const config: StorybookConfig = {
           {
               loader: require.resolve("css-loader"),
               options: {
-                  
                   importLoaders: 1,
               },
           },{
@@ -44,6 +43,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+    defaultName: 'Documentation',
   },
 };
 export default config;
