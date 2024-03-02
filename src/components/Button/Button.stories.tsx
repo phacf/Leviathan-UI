@@ -1,4 +1,3 @@
-import React from 'react'
 import { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './Button'
@@ -10,12 +9,12 @@ export default {
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    label:{
+    label: {
       description: 'Label that goes inside the element',
       defaultValue: 'Click me',
       control: { type: 'text' }
     },
-    audioDescription:{
+    audioDescription: {
       description: 'Inclui uma descrição de áudio para usuários de leitores de tela',
       defaultValue: 'Click me',
       control: { type: 'text' }
@@ -34,7 +33,7 @@ type Story = StoryObj<typeof Button>;
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 export const Default: Story = {
-  args:{
+  args: {
     label: 'click-me',
     size: 'medium',
     color: 'primary',

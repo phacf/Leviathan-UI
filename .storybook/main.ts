@@ -1,4 +1,5 @@
 import type { StorybookConfig } from "@storybook/react-webpack5";
+import path from 'path';
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -7,31 +8,32 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    "@storybook/addon-styling-webpack",
-    ({
+    {
       name: "@storybook/addon-styling-webpack",
-
       options: {
-        rules: [{
-      test: /\.css$/,
-      sideEffects: true,
-      use: [
-          require.resolve("style-loader"),
+        rules: [
           {
-              loader: require.resolve("css-loader"),
-              options: {
+            test: /\.css$/,
+            sideEffects: true,
+            use: [
+              "style-loader",
+              {
+                loader: "css-loader",
+                options: {
                   importLoaders: 1,
+                },
               },
-          },{
-    loader: require.resolve("postcss-loader"),
-    options: {
-    implementation: require.resolve("postcss"),
+              {
+                loader: "postcss-loader",
+                options: {
+                  implementation: require.resolve("postcss"),
+                },
+              },
+            ],
+          },
+        ],
+      },
     },
-    },
-      ],
-    },],
-      }
-    })
   ],
   framework: {
     name: "@storybook/react-webpack5",
@@ -45,5 +47,28 @@ const config: StorybookConfig = {
     autodocs: "tag",
     defaultName: 'Documentation',
   },
+  webpackFinal: async (config) => {
+    // Resolve modules using the provided root directory
+    config?.resolve?.modules?.push(path.resolve(__dirname, '../src'));
+
+    // Add TypeScript support
+    config?.module?.rules?.push({
+      test: /\.(ts|tsx)$/,
+      use: [
+        {
+          loader: require.resolve('ts-loader'),
+          options: {
+            configFile: path.resolve(__dirname, '../tsconfig.json'),
+          },
+        },
+      ],
+      include: path.resolve(__dirname, '../src'),
+    });
+
+    config?.resolve?.extensions?.push('.ts', '.tsx');
+
+    return config;
+  },
 };
+
 export default config;

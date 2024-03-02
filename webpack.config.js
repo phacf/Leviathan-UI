@@ -1,10 +1,14 @@
+import path from 'path'
+
 module.exports = {
   webpackConfig: {
+
     module: {
 
       // Often used for tailwind
       name: '@storybook/addon-styling-webpack',
       options: {
+
         rules: [
           // Replaces existing CSS rules to support PostCSS
           {
@@ -21,23 +25,15 @@ module.exports = {
                 options: { implementation: require.resolve('postcss') }
               }
             ],
-          }
+          },
+
         ]
       }
-
-      // rules: [
-      //   // Babel loader will use your project’s babel.config.js
-      //   {
-      //     test: /\.jsx?$/,
-      //     exclude: /node_modules/,
-      //     loader: 'babel-loader'
-      //   },
-      //   // Other loaders that are needed for your components
-      //   {
-      //     test: /\.css$/,
-      //     use: ['style-loader', 'css-loader']
-      //   }
-      // ]
     }
+  },
+  resolve: {
+    root: path.resolve('./src')
+
   }
+
 }

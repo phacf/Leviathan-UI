@@ -1,6 +1,7 @@
-import React from 'react'
-import { Tooltip } from 'react-tooltip'
+import { Tooltip } from 'components'
+import React, { useEffect, useRef } from 'react'
 import 'tailwindcss/tailwind.css'
+import { getComponentPosition } from 'utils'
 
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   /**
@@ -17,6 +18,8 @@ export const Button = (props: ButtonProps) => {
 
   const { size, color, label, audioDescription, tooltip } = props
 
+  const buttonRef = useRef<HTMLDivElement>(null)
+
   const sizes = {
     small: 'text-sm font-medium px-3 py-2',
     medium: 'px-5 py-2 font-medium',
@@ -32,21 +35,34 @@ export const Button = (props: ButtonProps) => {
   }
 
 
+  useEffect(() => {
+    buttonRef.current && getComponentPosition(buttonRef.current.getBoundingClientRect())
+
+  }, [])
   return (
-    <button
-      className={`${styles[color]} ${sizes[size]} `}
-      aria-label={label}
-      data-tooltip-id="my-tooltip"
-      data-tooltip-content={tooltip}
-      {...props}
+    <div
+      ref={buttonRef}
     >
-      {label}
-      {/* Inclui uma descrição de áudio para usuários de leitores de tela */}
-      <Tooltip className='rounded-md bg-primary-300 text-secondary-700 p-1 text-xs' role='tooltip' variant='info' classNameArrow='' id="my-tooltip" />
-      <span className="sr-only" aria-live="polite" aria-hidden="true">
-        {audioDescription}
-      </span>
-    </button>
+      <Tooltip
+        content={tooltip}>
+        <button
+          className={`${styles[color]} ${sizes[size]} `}
+          aria-label={label}
+          data-tooltip-id="my-tooltip"
+          {...props}
+        >
+          {label}
+          {/* Inclui uma descrição de áudio para usuários de leitores de tela */}
+          {
+            audioDescription &&
+            <span className="sr-only" aria-live="polite" aria-hidden="true">
+              {audioDescription}
+            </span>
+          }
+        </button>
+      </Tooltip>
+    </div>
+
   )
 }
 
