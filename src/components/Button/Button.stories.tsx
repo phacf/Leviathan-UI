@@ -1,35 +1,43 @@
 import React from 'react'
-import { ComponentStory, ComponentMeta } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
 import { Button } from './Button'
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
   title: 'Leviathan/Button',
+  tags: ['autodocs'],
   component: Button,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
-    children: {
+    label:{
       description: 'Label that goes inside the element',
       defaultValue: 'Click me',
       control: { type: 'text' }
     },
-    disabled:{control: 'boolean'},
-    outline: {control: 'none'},
+    audioDescription:{
+      description: 'Inclui uma descrição de áudio para usuários de leitores de tela',
+      defaultValue: 'Click me',
+      control: { type: 'text' }
+    },
     size: {
       control: 'radio',
-      options: ['default' , 'small', 'medium', 'large', 'xl', 'xxl']    
+      description: 'Label that goes inside the element',
+      options: ['large', 'medium', 'small'],
+      defaultValue: 'medium'
     },
-    type: {control: 'none'}
   }
-} as ComponentMeta<typeof Button>
+} satisfies Meta<typeof Button>
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Button> = args => <Button {...args}>{args.children}</Button>
+type Story = StoryObj<typeof Button>;
 
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-export const Default = Template.bind({})
-
-
-
-
+export const Default: Story = {
+  args:{
+    label: 'click-me',
+    size: 'medium',
+    color: 'primary',
+    audioDescription: 'Incluir descrição de audio',
+  }
+}
